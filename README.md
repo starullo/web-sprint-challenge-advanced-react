@@ -29,14 +29,27 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+You can put 'this.state = {your state object}' in the constructor of your class component, after you call super().
+
 
 2. Describe the different phases of the component lifecycle.
+MOUNTING is when the component is rendered on the page. If you used the componentDidMount() (or useEffect()) function then that function will be invoked. UPDATING is when the component re-renders based on changes to your state and props. UNMOUNTING is when the component is no longer visible on the screen. componentWillUnmount() (or any 'cleanup' function returned from useEffect()) will be called at this time.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+componentDidMount() = The code/functions inside componentDidMount will be invoked when the component is first rendered.
+
+shouldComponentUpdate() = Could be used to prevent a component from calling render()
+
+componentWillUnmount() = Could be used for any 'cleanup' you may need to do, such as invalidating timers or cancelling network requests.
+
 4. Define stateful logic.
 
+Stateful logic is basically logic that is built into a component (like a click event or a function that sets state). It usually deals with state.
+
 5. Describe how to test a React component with React Testing Library.
+
+The test must be created in it's own file, and should be named 'nameOfTest.test.js'. All methods you're going to use (render, screen, etc) should be imported from "@testing-library/react". The component you're testing needs to be imported into the test file as well. In the test file you should render the component and 'grab' different elements inside it by using the necessary query. You can then test for different behaviors/results on those elements by mimicking the user experience and verifying that the output is what it's supposed to be.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 

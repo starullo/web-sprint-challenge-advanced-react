@@ -5,6 +5,13 @@ body {
     sans-serif;
 }
 
+.lightMode {
+  background-color: white;
+  color: #0e101c;
+}
+
+
+
 .container {
   max-width: 800px;
   margin: 0 auto;

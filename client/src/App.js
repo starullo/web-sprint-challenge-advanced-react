@@ -10,6 +10,7 @@ import "./App.css";
 function App() {
   // array of plants that have been added to the cart
   const [cart, setCart] = useState([]);
+  const [darkMode, setDarkMode] = useState(true)
 
   // add a plant to the cart
   const addToCart = (plant) => {
@@ -22,13 +23,16 @@ function App() {
   };
 
   return (
-    <div>
+    <div className={!darkMode ? 'lightMode' : ''}>
+      <button onClick={()=>{
+        setDarkMode(!darkMode)
+      }}>{darkMode ? 'Light Mode' : 'Dark Mode'}</button>
       <Router>
-        <nav className="container">
-          <h1>
+        <nav className={!darkMode ? 'lightMode container' : 'container'} >
+          <h1 className={!darkMode ? 'lightMode' : ''}>
             React Plants <span role="img">🌿</span>
           </h1>
-          <ul className="steps">
+          <ul className={!darkMode ? 'lightMode steps' : 'steps'}>
             <li>
               <NavLink exact to="/">
                 Plants
